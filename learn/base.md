@@ -153,7 +153,6 @@ html, body { font-size: 14px; }
 ## 盒子外轮廓 在边框外面的边框
 ```css
 /* outline 轮廓 是绘制于元素周围的一条线, 位于边框边缘的外围, 可起到突出元素的作用 */
-/* : */
 .outline_red_solid { outline: 1px solid red; }
 ```
 
