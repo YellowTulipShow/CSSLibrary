@@ -37,6 +37,238 @@ address,caption,cite,code,dfn,em,th,var { font-style: normal; font-weight: 500; 
 html, body { font-size: 14px; }
 ```
 
+## 文字换行断句
+```css
+/*
+允许对长的不可分割的单词进行分割并换行到下一行。
+属性允许您允许文本强制文本进行换行-即使这意味着会对单词进行拆分 */
+.word_wrap {
+    /* 只在允许的断字点换行(浏览器保持默认处理) */
+    word-wrap: normal;
+    /* 在长单词或URL地址内容进行换行 */
+    word-wrap: break-word;
+}
+
+/*
+规定非中日韩文本的换行规则
+在恰当的断字点进行换行  word-break 属性规定自动换行的处理方法 */
+.word_break {
+    /* 使用浏览器默认的换行规则 */
+    word-break: normal;
+    /* 允许在单词内换行 */
+    word-break: break-all;
+    /* 只能在半角空格或连字符处换行 */
+    word-break: keep-all;
+}
+
+/*
+属性规定当文本溢出包含元素时发生的事情
+一般这个属性要和 overflow:hidden; white-space: nowrap; 搭配使用 */
+.text_overflow {
+    /* 修剪文本 */
+    text-overflow: clip;
+    /* 显示省略符号来代表被修剪的文本 */
+    text-overflow: ellipsis;
+    /* 使用给定的字符串来代表被修剪的文本 */
+    text-overflow: "string";
+    /* 继承父级(默认不进行处理) */
+    text-overflow: inherit;
+}
+
+/*
+属性设置如何处理元素内的空白
+这个属性声明建立布局过程中如何处理元素中的空白符
+值 pre-wrap 和 pre-line 是 CSS 2.1 中新增的 */
+.white_space {
+    /* 默认 - 空白会被浏览器忽略 */
+    white-space: normal;
+    /* 空白会被浏览器保留 - 其行为方式类似 HTML 中的 <pre> 标签 */
+    white-space: pre;
+    /* 文本不会换行 - 文本会在在同一行上继续 - 直到遇到 <br> 标签为止 */
+    white-space: nowrap;
+    /* 保留空白符序列 - 但是正常地进行换行 */
+    white-space: pre-wrap;
+    /* 合并空白符序列 - 但是保留换行符 */
+    white-space: pre-line;
+    /* 规定应该从父元素继承 white-space 属性的值 */
+    white-space: inherit;
+}
+```
+
+
+## 字体阴影
+
+格式:
+```
+text-shadow: h-shadow v-shadow blur color;
+```
+
+参数含义:
+
+值 | 描述
+--- | ---
+h-shadow | 必需 - 水平阴影的位置 - 允许负值
+v-shadow | 必需 - 垂直阴影的位置 - 允许负值
+blur | 可选 - 模糊距离
+color | 可选 - 阴影的颜色
+
+```css
+.text_shadow {
+    text-shadow: 5px 5px 5px #FF0000;
+}
+```
+
+## 盒子阴影
+
+格式:
+```
+box-shadow: h-shadow v-shadow blur spread color inset;
+```
+
+参数含义:
+
+值 | 描述
+--- | ---
+h-shadow | 必需 - 水平阴影的位置 - 允许负值
+v-shadow | 必需 - 垂直阴影的位置 - 允许负值
+blur | 可选 - 模糊距离
+spread | 可选 - 阴影的尺寸
+color | 可选 - 阴影的颜色
+inset | 可选 - 将外部阴影 (outset) 改为内部阴影
+
+```css
+/* 正常阴影 */
+.box_shadow {
+    -moz-box-shadow: 0 0 4px #888;
+    box-shadow: 0 0 4px #888;
+}
+
+/* 内部阴影 + inset */
+.box_shadow {
+    -moz-box-shadow: 0 0 4px #888 inset;
+    box-shadow: 0 0 4px #888 inset;
+}
+```
+
+
+## 透明度
+```css
+/* 完全透明 */
+.opacity-0 {
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+}
+/* 50%透明 */
+.opacity-50 {
+    filter: alpha(opacity=50);
+    -moz-opacity: .5;
+    opacity: .5;
+}
+/* 不透明 */
+.opacity-100 {
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+}
+```
+
+
+## 盒子各区域的定义选择
+
+使盒子可以允许以特定的方式定义匹配某个区域的特定元素
+
+```css
+/*
+为元素设定的宽度和高度决定了元素的边框盒
+就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
+通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度 */
+.box_sizing_borderbox {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+这是由 CSS2.1 规定的宽度高度行为
+宽度和高度分别应用到元素的内容框
+在宽度和高度之外绘制元素的内边距和边框 */
+.box_sizing_contentbox {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/* 规定应从父元素继承 box-sizing 属性的值 */
+.box_sizing_inherit {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+```
+
+
+## 溢出处理
+
+可以对盒子的溢出内容进行处理
+
+```css
+/* 默认值。内容不会被修剪，会呈现在元素框之外。 */
+.overflow_style_visible { overflow: visible; }
+/* 内容会被修剪，并且其余内容是不可见的。 */
+.overflow_style_hidden { overflow: hidden; }
+/* 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 */
+.overflow_style_scroll { overflow: scroll; }
+/* 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 */
+.overflow_style_auto { overflow: auto; }
+/* 规定应该从父元素继承 overflow 属性的值。 */
+.overflow_style_inherit { overflow: inherit; }
+```
+
+**PS:**
+
+给盒子使用 `overflow: hidden;` 样式后, 盒子内部下一级的 `float: left;` 可以不需要进行清除浮动
+
+
+## 盒子外轮廓 在边框外面的边框
+```css
+/* outline 轮廓 是绘制于元素周围的一条线, 位于边框边缘的外围, 可起到突出元素的作用 */
+.outline_red_solid { outline: 1px solid red; }
+```
+
+**学习链接:**
+* [w3school](http://www.w3school.com.cn/cssref/pr_outline.asp)
+
+
+## 用户是否可选择
+```css
+.user_select_none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.user_select_text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+.user_select_all {
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+}
+.user_select_element {
+    -webkit-user-select: element;
+    -moz-user-select: element;
+    -ms-user-select: element;
+    user-select: element;
+}
+```
+
+
 ## 鼠标样式
 常用于鼠标动作 如 `:hover` 鼠标悬停
 ```css
@@ -74,151 +306,6 @@ html, body { font-size: 14px; }
 .mouse_style_cursor_help:hover { cursor: help; }
 ```
 
-## 溢出处理
-
-可以对盒子的溢出内容进行处理
-
-```css
-/* 默认值。内容不会被修剪，会呈现在元素框之外。 */
-.overflow_style_visible { overflow: visible; }
-/* 内容会被修剪，并且其余内容是不可见的。 */
-.overflow_style_hidden { overflow: hidden; }
-/* 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 */
-.overflow_style_scroll { overflow: scroll; }
-/* 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 */
-.overflow_style_auto { overflow: auto; }
-/* 规定应该从父元素继承 overflow 属性的值。 */
-.overflow_style_inherit { overflow: inherit; }
-```
-
-**PS:**
-
-给盒子使用 `overflow: hidden;` 样式后, 盒子内部下一级的 `float: left;` 可以不需要进行清除浮动
-
-## 透明度
-```css
-/* 完全透明 */
-.opacity-0 {
-    filter: alpha(opacity=0);
-    -moz-opacity: 0;
-    opacity: 0;
-}
-/* 50%透明 */
-.opacity-50 {
-    filter: alpha(opacity=50);
-    -moz-opacity: .5;
-    opacity: .5;
-}
-/* 不透明 */
-.opacity-100 {
-    filter: alpha(opacity=100);
-    -moz-opacity: 1;
-    opacity: 1;
-}
-```
-
-## 盒子各区域的定义选择
-
-使盒子可以允许以特定的方式定义匹配某个区域的特定元素
-
-```css
-/*
-为元素设定的宽度和高度决定了元素的边框盒
-就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
-通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度 */
-.box_sizing_borderbox {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-/*
-这是由 CSS2.1 规定的宽度高度行为
-宽度和高度分别应用到元素的内容框
-在宽度和高度之外绘制元素的内边距和边框 */
-.box_sizing_contentbox {
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
-/* 规定应从父元素继承 box-sizing 属性的值 */
-.box_sizing_inherit {
-    -moz-box-sizing: inherit;
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
-}
-```
-
-## 盒子外轮廓 在边框外面的边框
-```css
-/* outline 轮廓 是绘制于元素周围的一条线, 位于边框边缘的外围, 可起到突出元素的作用 */
-.outline_red_solid { outline: 1px solid red; }
-```
-
-**学习链接:**
-* [w3school](http://www.w3school.com.cn/cssref/pr_outline.asp)
-
-
-## 盒子阴影
-
-格式:
-```
-box-shadow: h-shadow v-shadow blur spread color inset;
-```
-
-参数含义:
-
-值 | 描述
---- | ---
-h-shadow | 必需 - 水平阴影的位置 - 允许负值
-v-shadow | 必需 - 垂直阴影的位置 - 允许负值
-blur | 可选 - 模糊距离
-spread | 可选 - 阴影的尺寸
-color | 可选 - 阴影的颜色
-inset | 可选 - 将外部阴影 (outset) 改为内部阴影
-
-```css
-/* 正常阴影 */
-.box_shadow {
-    -moz-box-shadow: 0 0 4px #888;
-    box-shadow: 0 0 4px #888;
-}
-
-/* 内部阴影 + inset */
-.box_shadow {
-    -moz-box-shadow: 0 0 4px #888 inset;
-    box-shadow: 0 0 4px #888 inset;
-}
-```
-
-## 用户是否可选择
-```css
-.user_select_none {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.user_select_text {
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
-}
-.user_select_all {
-    -webkit-user-select: all;
-    -moz-user-select: all;
-    -ms-user-select: all;
-    user-select: all;
-}
-.user_select_element {
-    -webkit-user-select: element;
-    -moz-user-select: element;
-    -ms-user-select: element;
-    user-select: element;
-}
-```
 
 ## 隐藏并且需要存在的盒子
 ```css
