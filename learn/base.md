@@ -45,6 +45,7 @@ html, body { font-size: 14px; }
 .word_wrap {
     /* 只在允许的断字点换行(浏览器保持默认处理) */
     word-wrap: normal;
+
     /* 在长单词或URL地址内容进行换行 */
     word-wrap: break-word;
 }
@@ -55,8 +56,10 @@ html, body { font-size: 14px; }
 .word_break {
     /* 使用浏览器默认的换行规则 */
     word-break: normal;
+
     /* 允许在单词内换行 */
     word-break: break-all;
+
     /* 只能在半角空格或连字符处换行 */
     word-break: keep-all;
 }
@@ -67,10 +70,13 @@ html, body { font-size: 14px; }
 .text_overflow {
     /* 修剪文本 */
     text-overflow: clip;
+
     /* 显示省略符号来代表被修剪的文本 */
     text-overflow: ellipsis;
+
     /* 使用给定的字符串来代表被修剪的文本 */
     text-overflow: "string";
+
     /* 继承父级(默认不进行处理) */
     text-overflow: inherit;
 }
@@ -82,14 +88,19 @@ html, body { font-size: 14px; }
 .white_space {
     /* 默认 - 空白会被浏览器忽略 */
     white-space: normal;
+
     /* 空白会被浏览器保留 - 其行为方式类似 HTML 中的 <pre> 标签 */
     white-space: pre;
+
     /* 文本不会换行 - 文本会在在同一行上继续 - 直到遇到 <br> 标签为止 */
     white-space: nowrap;
+
     /* 保留空白符序列 - 但是正常地进行换行 */
     white-space: pre-wrap;
+
     /* 合并空白符序列 - 但是保留换行符 */
     white-space: pre-line;
+
     /* 规定应该从父元素继承 white-space 属性的值 */
     white-space: inherit;
 }
@@ -215,12 +226,16 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 ```css
 /* 默认值。内容不会被修剪，会呈现在元素框之外。 */
 .overflow_style_visible { overflow: visible; }
+
 /* 内容会被修剪，并且其余内容是不可见的。 */
 .overflow_style_hidden { overflow: hidden; }
+
 /* 内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 */
 .overflow_style_scroll { overflow: scroll; }
+
 /* 如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。 */
 .overflow_style_auto { overflow: auto; }
+
 /* 规定应该从父元素继承 overflow 属性的值。 */
 .overflow_style_inherit { overflow: inherit; }
 ```
@@ -274,34 +289,49 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 ```css
 /* 默认光标(通常是一个箭头) */
 .mouse_style_cursor_default:hover { cursor: default; }
+
 /* 默认浏览器设置的光标 */
 .mouse_style_cursor_auto:hover { cursor: auto; }
+
 /* 光标呈现为十字线 */
 .mouse_style_cursor_crosshair:hover { cursor: crosshair; }
+
 /* 光标呈现为指示链接的指针(一只手) */
 .mouse_style_cursor_pointer:hover { cursor: pointer; }
+
 /* 此光标指示某对象可被移动 */
 .mouse_style_cursor_move:hover { cursor: move; }
+
 /* 此光标指示矩形框的边缘可被向右(东)移动 */
 .mouse_style_cursor_e-resize:hover { cursor: e-resize; }
+
 /* 此光标指示矩形框的边缘可被向上及向右移动(北/东) */
 .mouse_style_cursor_ne-resize:hover { cursor: ne-resize; }
+
 /* 此光标指示矩形框的边缘可被向上及向左移动(北/西) */
 .mouse_style_cursor_nw-resize:hover { cursor: nw-resize; }
+
 /* 此光标指示矩形框的边缘可被向上(北)移动 */
 .mouse_style_cursor_n-resize:hover { cursor: n-resize; }
+
 /* 此光标指示矩形框的边缘可被向下及向右移动(南/东) */
 .mouse_style_cursor_se-resize:hover { cursor: se-resize; }
+
 /* 此光标指示矩形框的边缘可被向下及向左移动(南/西) */
 .mouse_style_cursor_sw-resize:hover { cursor: sw-resize; }
+
 /* 此光标指示矩形框的边缘可被向下移动(南) */
 .mouse_style_cursor_s-resize:hover { cursor: s-resize; }
+
 /* 此光标指示矩形框的边缘可被向左移动(西) */
 .mouse_style_cursor_w-resize:hover { cursor: w-resize; }
+
 /* 此光标指示文本 */
 .mouse_style_cursor_text:hover { cursor: text; }
+
 /* 此光标指示程序正忙(通常是一只表或沙漏) */
 .mouse_style_cursor_wait:hover { cursor: wait; }
+
 /* 此光标指示可用的帮助(通常是一个问号或一个气球) */
 .mouse_style_cursor_help:hover { cursor: help; }
 ```
