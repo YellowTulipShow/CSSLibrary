@@ -255,6 +255,16 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 * [w3school](http://www.w3school.com.cn/cssref/pr_outline.asp)
 
 
+## 盒子圆角框
+```css
+.border_radius {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+```
+
+
 ## 用户是否可选择
 ```css
 .user_select_none {
