@@ -185,6 +185,16 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 ```
 
 
+## 盒子圆角框
+```css
+.border_radius {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+```
+
+
 ## 盒子各区域的定义选择
 
 使盒子可以允许以特定的方式定义匹配某个区域的特定元素
