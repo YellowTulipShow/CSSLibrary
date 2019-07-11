@@ -105,7 +105,16 @@ html, body { font-size: 14px; }
     white-space: inherit;
 }
 ```
+### 文本文字显示几行, 多余部分使用省略号忽略
+```css
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+```
 
+* [css的line-clamp属性是什么？如何使用？](http://www.php.cn/css-tutorial-412556.html)
+* [对于无法支持的浏览器，我们可以使用JavaScript来实现效果。JavaScript代码，Clamp.js的下载地址点击即可跳转查看](https://github.com/josephschmitt/Clamp.js)
 
 ## 字体阴影
 
