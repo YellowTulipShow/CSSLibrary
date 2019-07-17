@@ -195,8 +195,8 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制
 通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度 */
 .box_sizing_borderbox {
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -205,15 +205,15 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 宽度和高度分别应用到元素的内容框
 在宽度和高度之外绘制元素的内边距和边框 */
 .box_sizing_contentbox {
-    -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
 /* 规定应从父元素继承 box-sizing 属性的值 */
 .box_sizing_inherit {
-    -moz-box-sizing: inherit;
     -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
     box-sizing: inherit;
 }
 ```
