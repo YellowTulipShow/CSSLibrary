@@ -267,8 +267,8 @@ inset | 可选 - 将外部阴影 (outset) 改为内部阴影
 ## 盒子圆角框
 ```css
 .border_radius {
-    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
 }
 ```
